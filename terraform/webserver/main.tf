@@ -54,7 +54,7 @@ resource "aws_instance" "Linux_VM" {
 
 resource "aws_ecr_repository" "my_appdb" {
   name                 = "ecr_my_db"
-  image_tag_mutability = "IMMUTABLE"
+  image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
     scan_on_push = true
@@ -63,7 +63,7 @@ resource "aws_ecr_repository" "my_appdb" {
 
 resource "aws_ecr_repository" "my_app" {
   name                 = "ecr_my_app"
-  image_tag_mutability = "IMMUTABLE"
+  image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
     scan_on_push = true

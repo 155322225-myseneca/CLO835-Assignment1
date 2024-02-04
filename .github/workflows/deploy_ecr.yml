@@ -16,6 +16,10 @@ jobs:
 
     - name: Check out code
       uses: actions/checkout@v2
+      
+    - name: Get commit hash
+      id: commit
+      uses: prompt/actions-commit-hash@v3
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -31,7 +35,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY_DB: ecr_my_db
         ECR_REPOSITORY_APP: ecr_my_app
-        IMAGE_TAG: v0.1
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
         cd app
         # Docker build DB
