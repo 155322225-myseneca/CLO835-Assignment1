@@ -33,6 +33,7 @@ jobs:
         ECR_REPOSITORY_APP: ecr_my_app
         IMAGE_TAG: v0.1
       run: |
+        cd app
         # Docker build DB
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_DB:$IMAGE_TAG -f Dockerfile_mysql .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY_DB:$IMAGE_TAG
