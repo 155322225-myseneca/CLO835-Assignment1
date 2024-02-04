@@ -35,11 +35,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY_DB: ecr_my_db
         ECR_REPOSITORY_APP: ecr_my_app
-<<<<<<< HEAD
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
-=======
-        IMAGE_TAG: ${{ steps.meta.outputs.tags }}
->>>>>>> 5138aca2c05df5791a3315a2857a7abc50db3b5d
       run: |
         cd app
         # Docker build DB
