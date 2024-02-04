@@ -38,6 +38,7 @@ resource "aws_instance" "Linux_VM" {
   subnet_id                   = data.terraform_remote_state.tf_remote_state_dev.outputs.public_subnet_id[0]
   security_groups             = [aws_security_group.web_sg.id]
   associate_public_ip_address = true
+  iam_instance_profile        = "LabInstanceProfile"
   user_data                   = <<EOF
                              #!/bin/bash
                             sudo yum update -y
