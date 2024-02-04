@@ -1,9 +1,14 @@
 # Local .terraform directories
 **/.terraform/*
+terraform/network/.terraform*
+terraform/webserver/.terraform*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# public keys
+terraform/webserver/dev*
 
 # Crash log files
 crash.log
